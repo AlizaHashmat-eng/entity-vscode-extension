@@ -1,87 +1,109 @@
 # Entity VSCode Extension
 
-## Overview
+**Hi! I'm Aliza Hashmat**, a passionate software engineer and full-stack developer. This extension is designed to simplify the management and generation of entities in your projects, whether you're working with databases or complex data structures. The extension provides a streamlined workflow that accelerates development, saving you time and effort.
+---
 
-The **Entity VSCode Extension** simplifies managing and generating entities in your projects. Whether you’re working with databases or complex data structures, this extension enhances your workflow and accelerates development. Here's a detailed walkthrough of how to use it.
+## 📋 Features
+
+- **Entity Management**: Create and manage entities easily within VSCode.
+- **Database Integration**: Seamlessly integrate entities with databases like MongoDB.
+- **Customizable Templates**: Modify the entity generation templates to suit your project's needs.
+- **Quick Commands**: Generate entities with a simple command, making coding faster and more efficient.
 
 ---
 
-## Demo: How the Extension Works
+## 🚀 Getting Started
 
-### 1. Install the Extension
+### Prerequisites
 
-First, install the **Entity VSCode Extension** from the [VSCode marketplace]() or clone the repository and load the extension in **development mode**.
+Make sure you have the following installed:
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Node.js](https://nodejs.org/) (Version 14.x or higher)
+- [npm](https://www.npmjs.com/)
 
-### 2. Open the Command Palette
+### Installation
 
-Press `Ctrl + Shift + P` (or `Cmd + Shift + P` on Mac) to open the **Command Palette** in VSCode.
+1. **Clone the Repository**
 
-![Command Palette](images/command-palette.png)
+    ```bash
+    git clone https://github.com/AlizaHashmat-eng/entity-vscode-extension-main.git
+    cd entity-vscode-extension-main
+    ```
 
----
+2. **Install Dependencies**
 
-### 3. Use the `Generate Entity` Command
+    ```bash
+    npm install
+    ```
 
-Type `Generate Entity` into the Command Palette and select it. This command initiates the process of creating a new entity.
+3. **Open the Project in VSCode**
 
-![Generate Entity Command](images/generate-entity-command.png)
+    Use Visual Studio Code to open the project directory.
 
----
+4. **Run the Extension in Development Mode**
 
-### 4. Define Entity Properties
-
-Next, you'll be prompted to enter details for the new entity. Define the entity name and its properties, such as fields and data types.
-
-**Example**:
-- **Entity Name**: `Customer`
-- **Properties**:
-  - `name` (String)
-  - `email` (String)
-  - `age` (Number)
-  - `isPremium` (Boolean)
-
-![Entity Properties](images/entity-properties.png)
+    - Open the **Debug Panel** in VSCode.
+    - Select **"Run Extension"**.
+    - This will open a new instance of VSCode with the extension loaded.
 
 ---
 
-### 5. Generated Entity
+## 💻 Usage
 
-After providing the properties, the extension will automatically generate an entity file based on the template. Here’s an example of the generated **Customer Entity**:
+### Command Palette
 
-```javascript
-// Customer Entity
+1. **Open the Command Palette**:  
+   Press `Ctrl + Shift + P` (or `Cmd + Shift + P` on Mac) to bring up the Command Palette in VSCode.
 
-class Customer {
-    constructor(name, email, age, isPremium) {
-        this.name = name;
-        this.email = email;
-        this.age = age;
-        this.isPremium = isPremium;
+2. **Use the `Generate Entity` Command**:  
+   Start typing `Generate Entity` and select the command when it appears.
+
+    ![Generate Entity Command](images/generate-entity-command.png)
+
+3. **Define Entity Properties**:  
+   You will be prompted to define your entity's name and properties. Example:
+    - Entity Name: `Customer`
+    - Properties: 
+      - `name`: `String`
+      - `email`: `String`
+      - `age`: `Number`
+      - `isPremium`: `Boolean`
+
+    ![Entity Properties](images/entity-properties.png)
+
+4. **Entity Generated**:  
+   The extension will generate an entity file using your input, following a template you can customize. Example:
+
+    ```javascript
+    class Customer {
+        constructor(name, email, age, isPremium) {
+            this.name = name;
+            this.email = email;
+            this.age = age;
+            this.isPremium = isPremium;
+        }
+
+        getDetails() {
+            return `${this.name}, ${this.email}, Age: ${this.age}, Premium: ${this.isPremium}`;
+        }
     }
 
-    getDetails() {
-        return `${this.name}, ${this.email}, Age: ${this.age}, Premium: ${this.isPremium}`;
-    }
-}
-
-module.exports = Customer;
-```
+    module.exports = Customer;
+    ```
 
 ---
 
-### 6. Customize Templates
+## ⚙️ Customization
 
-If you wish to customize the generated templates, you can modify them via the extension settings. Tailor the structure and formatting to your project needs.
+### Customizing the Entity Template
 
-Here’s an example of where to change the template:
+You can modify the entity template to fit your needs. This customization can be done in the extension's settings or directly in the code.
 
 ![Custom Template](images/custom-template.png)
 
----
+### Database Integration
 
-### 7. Database Integration
-
-The extension supports integration with databases. Here’s how you can use the generated entity with MongoDB:
+The extension supports database integration with systems like MongoDB. Here’s an example of using the generated entity with MongoDB:
 
 ```javascript
 const mongoose = require('mongoose');
@@ -98,47 +120,101 @@ const Customer = mongoose.model('Customer', customerSchema);
 module.exports = Customer;
 ```
 
-With this, you can connect the entities to a MongoDB database and manage your data more efficiently.
+---
+
+## 🛠️ Project Structure
+
+Here is an overview of the project files and directories:
+
+```text
+entity-vscode-extension-main/
+  ├── src/
+  │     ├── extension.js           # Main extension file
+  │     └── utils.js               # Utility functions
+  ├── package.json                 # Project configuration and dependencies
+  ├── README.md                    # Project documentation
+  ├── LICENSE                      # License for the extension
+  ├── .vscode/
+  │     └── settings.json          # VSCode-specific settings
+  ├── images/                      # Images used in the README and documentation
+  │     ├── command-palette.png
+  │     ├── generate-entity-command.png
+  │     ├── entity-properties.png
+  │     └── custom-template.png
+```
 
 ---
 
-## Example Screenshots
+## Demo: How the Extension Works
 
-Here are a few more examples of the extension in action:
+Here’s a quick demo of how the extension works:
+
+### 1. Install the Extension
+
+Install the **Entity VSCode Extension** from the VSCode marketplace or run it in development mode as explained above.
+
+### 2. Use the `Generate Entity` Command
+
+Open the **Command Palette** (`Ctrl + Shift + P`), type `Generate Entity`, and follow the prompts to create your entity.
+
+### 3. Customize Templates
+
+Customize your entity templates as shown in the customization section.
+
+---
+
+## 📷 Example Screenshots
 
 - **Command Palette**:
-  ![Command Palette](images/command-palette-example.png)
+  ![Command Palette Example](images/command-palette-example.png)
 
-- **Generated Entity File**:
-  ![Generated Entity](images/generated-entity-example.png)
+- **Generated Entity**:
+  ![Generated Entity Example](images/generated-entity-example.png)
 
-- **Custom Template**:
-  ![Custom Template](images/custom-templates-example.png)
-
----
-
-## Ready to Use?
-
-1. **Install the extension** or clone the repository.
-2. **Generate your first entity** using the command palette.
-3. **Customize the templates** to fit your project.
+- **Template Customization**:
+  ![Custom Template Example](images/custom-templates-example.png)
 
 ---
 
-### ⭐ If you like this extension, please give it a star on GitHub! ⭐
+## 🌟 Want to Contribute?
+
+Contributions are welcome! If you'd like to contribute to this project, feel free to submit a pull request or report issues.
+
+---
+
+## Commands
+
+| Command                       | Description                                           |
+|-------------------------------|-------------------------------------------------------|
+| `npm install`                 | Installs the necessary dependencies                   |
+| `npm run dev`                 | Starts the extension in development mode              |
+| `vsce package`                | Packages the extension for deployment                 |
+| `vsce publish`                | Publishes the extension to the VSCode marketplace     |
+
+---
+
+## 📦 Publishing
+
+1. **Create a Publisher Account**:  
+   To publish the extension to the marketplace, you must first create a publisher account on the [VSCode Marketplace](https://marketplace.visualstudio.com/).
+
+2. **Package the Extension**:  
+   Run the following command to package the extension:
+   ```bash
+   vsce package
+   ```
+
+3. **Publish the Extension**:
+   ```bash
+   vsce publish
+   ```
 
 ---
 
 ## Contact
 
-For more information, feel free to reach out on [LinkedIn](https://www.linkedin.com/in/aliza-hashmat) or check out more of my work on [GitHub](https://github.com/AlizaHashmat-eng).
+Feel free to connect with me on [LinkedIn](https://www.linkedin.com/in/aliza-hashmat) or check out more of my work on [GitHub](https://github.com/AlizaHashmat-eng).
 
 ---
 
-This page is designed to walk users through the usage of the **Entity VSCode Extension**, showing them how to get started and customize it according to their needs. The visuals make it easy to understand how the extension functions, and the example code provides real-world applications.
-
-You can use this content for your **example page** and integrate the screenshots (`images/command-palette.png`, etc.) into your repository.
-
-Let me know if you need further adjustments!
-### ⭐ If you found this project useful, don't forget to give it a star! ⭐
-
+### ⭐ If you like this extension, don't forget to give it a star! ⭐
