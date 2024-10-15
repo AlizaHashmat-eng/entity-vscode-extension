@@ -58,7 +58,6 @@ Make sure you have the following installed:
 2. **Use the `Generate Entity` Command**:  
    Start typing `Generate Entity` and select the command when it appears.
 
-    ![Generate Entity Command](images/generate-entity-command.png)
 
 3. **Define Entity Properties**:  
    You will be prompted to define your entity's name and properties. Example:
@@ -69,7 +68,6 @@ Make sure you have the following installed:
       - `age`: `Number`
       - `isPremium`: `Boolean`
 
-    ![Entity Properties](images/entity-properties.png)
 
 4. **Entity Generated**:  
    The extension will generate an entity file using your input, following a template you can customize. Example:
@@ -98,8 +96,6 @@ Make sure you have the following installed:
 ### Customizing the Entity Template
 
 You can modify the entity template to fit your needs. This customization can be done in the extension's settings or directly in the code.
-
-![Custom Template](images/custom-template.png)
 
 ### Database Integration
 
@@ -143,8 +139,6 @@ entity-vscode-extension-main/
   │     └── custom-template.png
 ```
 
----
-
 ## Demo: How the Extension Works
 
 Here’s a quick demo of how the extension works:
@@ -160,19 +154,6 @@ Open the **Command Palette** (`Ctrl + Shift + P`), type `Generate Entity`, and f
 ### 3. Customize Templates
 
 Customize your entity templates as shown in the customization section.
-
----
-
-## 📷 Example Screenshots
-
-- **Command Palette**:
-  ![Command Palette Example](images/command-palette-example.png)
-
-- **Generated Entity**:
-  ![Generated Entity Example](images/generated-entity-example.png)
-
-- **Template Customization**:
-  ![Custom Template Example](images/custom-templates-example.png)
 
 ---
 
